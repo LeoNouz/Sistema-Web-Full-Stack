@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Página Principal</title>
+  <title>Cliente Cadastro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link href="static/css/style.css" rel="stylesheet">
+  <link href="../../static/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,13 +47,13 @@
       <div class="px-3 py-2 bg-dark text-white">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="main.html" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <a href="../../main.html" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
             </a>
   
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
               <li>
-                <a href="main.html" class="nav-link text-secondary">
+                <a href="../../main.html" class="nav-link text-white">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                   Home
                 </a>
@@ -65,19 +65,19 @@
                 </a>
               </li>
               <li>
-                <a href="pedido/view/index.html" class="nav-link text-white">
+                <a href="../../pedido/view/index.html" class="nav-link text-white">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                   Pedidos
                 </a>
               </li>
               <li>
-                <a href="produto/view/index.html" class="nav-link text-white">
+                <a href="../../produto/view/index.html" class="nav-link text-white">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                   Produtos
                 </a>
               </li>
               <li>
-                <a href="cliente/view/index.html" class="nav-link text-white">
+                <a href="index.html" class="nav-link text-secondary">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                   Clientes
                 </a>
@@ -100,24 +100,109 @@
       </div>
     </header>
 
-    <div class="px-4 py-0 my-5 text-center">
-      <!--<a href="https://www.freepik.com/free-vector/colorful-bird-illustration-gradient_31530356.htm#query=colorful-bird-illustration-gradient&position=0&from_view=search&track=sph">Image by logturnal</a> on Freepik-->
-      <img class="d-block mx-auto mb-4" src="static/img/bird_2.jpg" alt="hero-banner" width="222" height="207">
-      <h1 class="display-5 fw-bold">Bem-vindo</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Você poderá realizar o cadastro de clientes, produtos e pedidos, além disso, será possível consultar as informações relevantes do seu negócio através de gráficos na página de dashboard</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">Dashboard</button>
-          <button type="button" class="btn btn-outline-primary btn-lg px-4">Pedidos</button>
+    <div class="container">
+      <main>
+        <div class="row g-5">
+          <div class="col-md-7 col-lg-8">
+            <form action="../model/cadastrar.php" method="post">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="" required>
+                </div>
+    
+                <div class="col-sm-6">
+                  <label for="sobrenome" class="form-label">Sobrenome</label>
+                  <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="" value="" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" value="" required>
+                </div>
+    
+                <div class="col-12">
+                  <label for="emaill" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emaill" name="emaill" placeholder="" required>
+                </div>
+
+                <div class="col-12">
+                  <label for="celular" class="form-label">Celular</label>
+                  <input type="tel" class="form-control" id="celular" name="celular" placeholder="" required>
+                </div>
+    
+                <div class="col-12">
+                  <label for="logradouro" class="form-label">Logradouro</label>
+                  <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="" required>
+                </div>
+    
+                <div class="col-12">
+                  <label for="bairro" class="form-label">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" required>
+                </div>
+    
+                <div class="col-md-5">
+                  <label for="estado" class="form-label">Estado</label>
+                  <select class="form-select" id="estado" name="estado" required>
+                    <option value="">Escolha...</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                  </select>
+                </div>
+    
+                <div class="col-md-4">
+                  <label for="cidade" class="form-label">Cidade</label>
+                  <select class="form-select" id="cidade" name="cidade" required>
+                    <option value="">Escolha um estado...</option>
+                  </select>
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="cep" class="form-label">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" placeholder="" required>
+                </div>
+              </div>
+    
+              <hr class="my-4">
+    
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Concluir cadastro</button>
+
+              <hr class="my-4">
+            </form>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   </main>
 
   <div class="container">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div class="col-md-4 d-flex align-items-center">
-        <a href="main.html" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <a href="../../main.html" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
           <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
         </a>
         <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
@@ -131,6 +216,6 @@
     </footer>
   </div>
 
-  <script src="static/js/script.js"></script>
+  <script src="../../static/js/script.js"></script>
 </body>
 </html>
